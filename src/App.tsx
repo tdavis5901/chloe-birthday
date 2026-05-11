@@ -161,16 +161,12 @@ function App() {
       <section className="relative z-10 flex min-h-screen items-center px-5 py-16 sm:px-8">
         <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
           <div>
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-rose-200 bg-white/70 px-4 py-2 text-sm font-semibold text-rose-700 shadow-sm backdrop-blur">
-              <Sparkles size={16} />
-              May today feel as magical as you are
-            </div>
             <h1 className="font-display text-6xl font-bold leading-[0.95] text-[#4b1f2e] sm:text-7xl lg:text-8xl">
-              Happy Birthday, Chloe
+              Happy Birthday Chloe
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[#6b3a47] sm:text-xl">
-              This little corner of the internet is for you: a love note, a memory lane,
-              a gallery waiting for our favorite photos, and one final surprise from me.
+              I hope you enjoy this little website I made for you. Thank you for always
+              supporting me my baby.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <a
@@ -345,12 +341,12 @@ function App() {
           <div className="max-w-2xl rounded-[2rem] bg-white p-8 text-center shadow-2xl sm:p-12">
             <Heart className="mx-auto mb-5 h-14 w-14 text-rose-600" fill="currentColor" />
             <h2 className="font-display text-4xl font-bold text-[#4b1f2e]">
-              Chloe, my wish is more days with you.
+              Happy Birthday beautiful..
             </h2>
             <p className="mt-5 text-lg leading-8 text-[#6b3a47]">
-              More songs in the car, more slow mornings, more adventures, more laughing
-              until our faces hurt, and more chances to remind you that you are loved
-              completely. Happy birthday, beautiful.
+              I love you so much. Waking up each day next to you feels surreal. I love
+              how we make eachother laugh, take care of eachother, and get to be best
+              friends and lovers at the same time. Enjoy your 22nd birthday honey
             </p>
             <button
               type="button"
