@@ -10,6 +10,12 @@ import {
   Volume2,
 } from 'lucide-react';
 import { QRCodeCanvas } from 'qrcode.react';
+import chloe01 from './assets/gallery/chloe-01.png';
+import chloe02 from './assets/gallery/chloe-02.jpeg';
+import chloe03 from './assets/gallery/chloe-03.jpg';
+import chloe04 from './assets/gallery/chloe-04.jpg';
+import chloe05 from './assets/gallery/chloe-05.png';
+import chloe06 from './assets/gallery/chloe-06.jpeg';
 
 const memories = [
   {
@@ -23,11 +29,6 @@ const memories = [
     text: 'The little moments with you always end up feeling like the ones I want to keep forever.',
   },
   {
-    date: 'Every new adventure',
-    title: 'Us, out in the world',
-    text: 'Anywhere becomes special when I get to see it beside you.',
-  },
-  {
     date: 'Today',
     title: 'Celebrating Chloe',
     text: 'The kindest heart, the prettiest smile, and my favorite person to love.',
@@ -35,12 +36,12 @@ const memories = [
 ];
 
 const gallery = [
-  'A photo of us smiling',
-  'A favorite date night',
-  'A sweet candid moment',
-  'A trip or adventure',
-  'A silly memory',
-  'Birthday queen Chloe',
+  { src: chloe01, alt: 'Chloe and Tyler cuddling in the car' },
+  { src: chloe02, alt: 'Chloe and Tyler walking together at night' },
+  { src: chloe03, alt: 'Chloe and Tyler smiling together outside' },
+  { src: chloe04, alt: 'Chloe and Tyler dressed up together' },
+  { src: chloe05, alt: 'Chloe hugging Tyler at a party' },
+  { src: chloe06, alt: 'Chloe and Tyler smiling at night' },
 ];
 
 const floatingHearts = Array.from({ length: 22 }, (_, index) => ({
@@ -242,19 +243,18 @@ function App() {
             <Camera className="hidden h-10 w-10 text-rose-500 sm:block" />
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {gallery.map((label, index) => (
+            {gallery.map((photo) => (
               <div
-                key={label}
+                key={photo.src}
                 className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/80 bg-white/70 shadow-sm backdrop-blur"
               >
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(244,63,94,0.18),rgba(251,191,36,0.18),rgba(255,255,255,0.6))]" />
-                <div className="absolute inset-4 flex items-center justify-center rounded-xl border border-dashed border-rose-300/80">
-                  <div className="text-center">
-                    <Camera className="mx-auto mb-3 text-rose-500 transition group-hover:scale-110" />
-                    <p className="font-semibold text-[#6b3a47]">{label}</p>
-                    <p className="mt-1 text-sm text-[#8a5965]">Photo placeholder {index + 1}</p>
-                  </div>
-                </div>
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#4b1f2e]/28 via-transparent to-white/5 opacity-80" />
               </div>
             ))}
           </div>
