@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap');
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+::selection {
+  background: #fecdd3;
+  color: #4b1f2e;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  main > section:not(:last-of-type),
+  main > button,
+  main > div:first-child,
+  main > div:nth-child(2) {
+    display: none !important;
+  }
+}
