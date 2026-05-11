@@ -84,9 +84,33 @@ function useAmbientMusic() {
   };
 
   const playPhrase = () => {
-    [523.25, 659.25, 783.99, 1046.5].forEach((note, index) => {
-      playNote(note, index * 0.32);
+    [
+      261.63,
+      261.63,
+      293.66,
+      261.63,
+      349.23,
+      329.63,
+      261.63,
+      261.63,
+      293.66,
+      261.63,
+      392,
+      349.23,
+    ].forEach((note, index) => {
+      playNote(note, index * 0.34);
     });
+  };
+
+  const sayHappyBirthday = () => {
+    if (!('speechSynthesis' in window)) return;
+
+    window.speechSynthesis.cancel();
+    const birthdayWish = new SpeechSynthesisUtterance('Happy birthday Chloe');
+    birthdayWish.rate = 0.78;
+    birthdayWish.pitch = 1.22;
+    birthdayWish.volume = 0.82;
+    window.speechSynthesis.speak(birthdayWish);
   };
 
   const toggle = async () => {
@@ -107,8 +131,9 @@ function useAmbientMusic() {
       return;
     }
 
+    sayHappyBirthday();
     playPhrase();
-    intervalRef.current = window.setInterval(playPhrase, 4200);
+    intervalRef.current = window.setInterval(playPhrase, 5600);
     setIsPlaying(true);
   };
 
